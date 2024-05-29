@@ -13,7 +13,6 @@ public class RewardsWindow : BaseWindow
     [SerializeField] private TMP_Text _titleText;
     [SerializeField] private TMP_Text _rewardsText;
     [SerializeField] private ScrollRect _scrollRect;
-    
     [SerializeField] private SimpleList<RewardSlot, RewardSlot.Data> _rewardSlotList;
 
     private LongTap _longTap;

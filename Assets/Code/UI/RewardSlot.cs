@@ -1,11 +1,12 @@
 ﻿using Code.Inventory;
 using Code.Utilities;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Code.UI
 {
-    public class RewardSlot : MonoBehaviour, IDataView<RewardSlot.Data>, IPressable
+    public class RewardSlot : MonoBehaviour, IDataView<RewardSlot.Data>, IReceiveLongTap
     {
         public class Data
         {
@@ -13,25 +14,26 @@ namespace Code.UI
         }
 
         [SerializeField] private Image _itemImage;
-        [SerializeField] private Tooltip tooltip;
-
+        [SerializeField] private Tooltip _tooltip;
         private Data _data;
 
-        public void OnPress()
+        public void OnReceiveLongTap()
         {
             if (_data != null && _data.Item != null)
-                tooltip.Show(_data.Item.Title, _data.Item.Description, _data.Item.Icon);
+                _tooltip.Show(_data.Item.Title, _data.Item.Description, _data.Item.Icon);
         }
 
-        public void OnRelease()
+        public void OnReleaseLongTap()
         {
-            tooltip.Hide();
+            _tooltip.Hide();
         }
 
         public void SetData(Data data)
         {
             _data = data;
-            if (_itemImage) _itemImage.sprite = data.Item.Icon;
+            
+            if (_itemImage)
+                _itemImage.sprite = data.Item.Icon;
         }
     }
 }

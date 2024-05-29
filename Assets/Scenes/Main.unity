@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &98668684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -212,12 +212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5071cd007a428eb84ba00401cdf916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tooltipRect: {fileID: 1748306890}
   _titleText: {fileID: 1986009058}
   _descriptionText: {fileID: 1223819913}
   _iconImage: {fileID: 793048528}
-  _smallSize: {x: 1095, y: 500}
-  _bigSize: {x: 2300, y: 700}
 --- !u!1 &151918079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,6 +2109,7 @@ GameObject:
   - component: {fileID: 1748306890}
   - component: {fileID: 1748306892}
   - component: {fileID: 1748306891}
+  - component: {fileID: 1748306893}
   m_Layer: 5
   m_Name: bg
   m_TagString: Untagged
@@ -2179,6 +2177,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748306889}
   m_CullTransparentMesh: 1
+--- !u!114 &1748306893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748306889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c27de07ca4d49da9f85b603f8a37993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1223819913}
+  _smallSize: {x: 1095, y: 500}
+  _bigSize: {x: 2300, y: 700}
 --- !u!1 &1792292525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,9 +2906,9 @@ RectTransform:
   - {fileID: 542232875043493092}
   m_Father: {fileID: 1478441155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5747685740509764363
@@ -2967,7 +2980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemImage: {fileID: 201177861858130908}
-  tooltip: {fileID: 98668687}
+  _tooltip: {fileID: 98668687}
 --- !u!222 &9081169166108451974
 CanvasRenderer:
   m_ObjectHideFlags: 0
